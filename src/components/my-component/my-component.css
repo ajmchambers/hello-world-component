@@ -1,9 +1,10 @@
-div {
+div.displaying {
     -webkit-animation: color-change 1s infinite;
     -moz-animation: color-change 1s infinite;
     -o-animation: color-change 1s infinite;
     -ms-animation: color-change 1s infinite;
     animation: color-change 1s infinite;
+    font-size: 24px;
 }
 
 @-webkit-keyframes color-change {
