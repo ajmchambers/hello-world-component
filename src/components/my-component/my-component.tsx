@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, h } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
@@ -32,24 +32,24 @@ export class MyComponent {
     return <div class="editing">
       <label>
         First:
-        <input 
-          type="text" 
-          value={this.first} 
+        <input
+          type="text"
+          value={this.first}
           ref={elm => this.firstEl = elm}
           onInput={(event) => this.first = (event.target as HTMLInputElement).value} />
       </label>
       <label>
         Middle:
-        <input 
-          type="text" 
-          value={this.middle} 
+        <input
+          type="text"
+          value={this.middle}
           onInput={(event) => this.middle = (event.target as HTMLInputElement).value} />
       </label>
       <label>
         Last:
-        <input 
-          type="text" 
-          value={this.last} 
+        <input
+          type="text"
+          value={this.last}
           onInput={(event) => this.last = (event.target as HTMLInputElement).value} />
       </label>
       <button onClick={() => this.editing = false}>Done</button>
