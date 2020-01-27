@@ -10,7 +10,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
+  interface HelloWorldComponent {
     'first': string;
     'last': string;
     'middle': string;
@@ -20,25 +20,25 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLHelloWorldComponentElement extends Components.HelloWorldComponent, HTMLStencilElement {}
+  var HTMLHelloWorldComponentElement: {
+    prototype: HTMLHelloWorldComponentElement;
+    new (): HTMLHelloWorldComponentElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'hello-world-component': HTMLHelloWorldComponentElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent {
+  interface HelloWorldComponent {
     'first'?: string;
     'last'?: string;
     'middle'?: string;
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'hello-world-component': HelloWorldComponent;
   }
 }
 
@@ -48,7 +48,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'hello-world-component': LocalJSX.HelloWorldComponent & JSXBase.HTMLAttributes<HTMLHelloWorldComponentElement>;
     }
   }
 }
